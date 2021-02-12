@@ -1,12 +1,14 @@
 <template>
   <Header :totalIncome="state.totalIncome"/> 
   <Form @add-income="AddIncome"/> 
+  <IncomeList :state="state" /> 
 </template>
 
 <script>
 import { reactive, computed } from 'vue'
 import Header from './components/Header'
 import Form from './components/Form'
+import IncomeList from './components/IncomeList'
 
 export default {
   setup() {
@@ -20,6 +22,14 @@ export default {
             temp += state.income[i].value;
           }
         }
+        return temp;
+      }),
+      sortedIncome: computed(() => {
+        let temp = [];
+        temp = state.income.slice(0).sort(function(a,b) {
+          return b.date - a.date;
+        });
+
         return temp;
       })
     });
@@ -40,7 +50,8 @@ export default {
       Header,
       Form,
       state,
-      AddIncome
+      AddIncome,
+      IncomeList
     }
   }
 }
