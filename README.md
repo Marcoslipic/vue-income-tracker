@@ -26,4 +26,4 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Credits
-This project was make following a tutorial by Tyler Potts. https://www.youtube.com/watch?v=AjV7k7t78Ik 
+This project was made following a tutorial by Tyler Potts. https://www.youtube.com/watch?v=AjV7k7t78Ik 
